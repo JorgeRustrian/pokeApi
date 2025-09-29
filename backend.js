@@ -45,7 +45,7 @@ function mostrarPokemon(pokemon) {
     .map(s => `<li><span>${formatStatName(s.stat.name)}</span><strong>${s.base_stat}</strong></li>`)
     .join('');
 
-  // Crear tarjeta como elemento (appendChild seguro)
+
   const card = document.createElement('div');
   card.className = 'pokemon-card';
   card.innerHTML = `
@@ -64,7 +64,7 @@ function mostrarPokemon(pokemon) {
     </div>
   `;
 
-  // Estado favorito y botón toggle
+
   let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
   let isFav = favoritos.some(f => f.id === pokemon.id);
   const favBtn = card.querySelector('.fav-btn');
@@ -80,15 +80,13 @@ function mostrarPokemon(pokemon) {
       favBtn.textContent = '❌ Quitar de favoritos';
       isFav = true;
     }
-    // Si la sección de favoritos está visible, actualizamos su vista
-    const favContainer = document.querySelector('#favoritosContainer');
-    if (favContainer && favContainer.style.display !== 'none') mostrarFavoritos();
+   
   });
 
   results.appendChild(card);
 }
 
-// --- Helper: formatea nombres de stats ---
+
 function formatStatName(name) {
   const map = {
     'hp': 'HP',
@@ -150,7 +148,7 @@ function agregarAFavoritos(pokemon) {
 function mostrarFavoritos() {
   results.innerHTML = '';
   const contenedor = document.querySelector("#favoritosContainer");
-  contenedor.innerHTML = ""; // limpiar antes de mostrar
+  contenedor.innerHTML = ""; 
 
   const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
