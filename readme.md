@@ -24,7 +24,7 @@ Permite:
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/pokedex.git
+git clone https://github.com/jorgerustrian/pokedex.git
 ```
 2. Entrar a la carpeta del proyecto
 ```bash
